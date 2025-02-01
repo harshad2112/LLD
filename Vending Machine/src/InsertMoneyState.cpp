@@ -1,7 +1,11 @@
+#include <iostream>
+
 #include "../include/SelectProductState.h"
 #include "../include/InsertMoneyState.h"
 #include "../include/DispenseState.h"
 #include "../include/IdleState.h"
+
+using namespace std;
 
 void InsertMoneyState::selectProduct(VendingMachine *vendingMachine, Item *item)
 {
@@ -29,6 +33,7 @@ Item *InsertMoneyState::dispenseProduct(VendingMachine *vendingMachine)
     Item *currentRequestedItem = vendingMachine->getCurrentItem();
     for (Note *note : currentBal)
     {
+        cout << note << endl;
         totalAmount += *note;
     }
     if (totalAmount < currentRequestedItem->getPrice())
@@ -47,4 +52,9 @@ Item *InsertMoneyState::dispenseProduct(VendingMachine *vendingMachine)
 void InsertMoneyState::updateInventory(VendingMachine *vendingMachine, Inventory *inventory)
 {
     throw("Cannot update inventory");
+}
+
+void InsertMoneyState::InsertMoney(VendingMachine *vendingMachine, vector<Note *> money)
+{
+    vendingMachine->setCurrentAmount(money);
 }

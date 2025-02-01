@@ -3,6 +3,9 @@
 
 #include "Inventory.h"
 #include "State.h"
+#include "Note.h"
+
+class State;
 
 class VendingMachine
 {
@@ -21,6 +24,7 @@ public:
     Inventory *getInventory();
     void insertNote(Note *note);
     vector<Note *> getCurrentAmount();
+    void setCurrentAmount(vector<Note *> money);
     vector<Note *> refundAmount();
     Item *getCurrentItem();
     void clearPurchase();
@@ -29,6 +33,7 @@ public:
     Item *dispenseProduct(VendingMachine *vendingMachine);
     vector<Note *> cancelPurchase(VendingMachine *vendingMachine);
     void updateInventory(VendingMachine *vendingMachine, Inventory *inventory);
+    void InsertMoney(VendingMachine *VendingMachine, vector<Note *> money);
 };
 
 #endif

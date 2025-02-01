@@ -37,3 +37,8 @@ void SelectProductState::updateInventory(VendingMachine *vendingMachine, Invento
 {
     throw("You have to select the product first");
 }
+
+void SelectProductState::InsertMoney(VendingMachine *vendingMachine, vector<Note *> money)
+{
+    throw("No product selected");
+}

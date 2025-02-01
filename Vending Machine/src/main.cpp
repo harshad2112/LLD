@@ -17,9 +17,13 @@ int main()
 
     try
     {
-        vendingMachine->selectProduct(vendingMachine);
+        vendingMachine->selectProductButton(vendingMachine);
         vendingMachine->selectProduct(vendingMachine, coke);
-        vend
+        Note *amount = new Note(FIFTY);
+        vector<Note *> money;
+        money.push_back(amount);
+        vendingMachine->InsertMoney(vendingMachine, money);
+        vendingMachine->dispenseProduct(vendingMachine);
     }
     catch (const std::exception &e)
     {

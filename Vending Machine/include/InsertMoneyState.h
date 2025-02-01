@@ -11,6 +11,7 @@ public:
     void selectProductButton(VendingMachine *vendingMachine);
     Item *dispenseProduct(VendingMachine *vendingMachine);
     void updateInventory(VendingMachine *vendingMachine, Inventory *inventory);
+    void InsertMoney(VendingMachine *VendingMachine, vector<Note *> money);
 };
 
 #endif

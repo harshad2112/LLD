@@ -26,3 +26,8 @@ void IdleState::updateInventory(VendingMachine *vendingMachine, Inventory *inven
 {
     vendingMachine->setInventory(inventory);
 }
+
+void IdleState::InsertMoney(VendingMachine *vendingMachine, vector<Note *> money)
+{
+    throw("No product selected");
+}
